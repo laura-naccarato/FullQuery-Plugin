@@ -7,7 +7,7 @@ fullPage.pagePosition = 0;
 		height: "100vh"
 	});
 
-	// document.body.style.overflow = 'hidden';
+	document.body.style.overflow = 'hidden';
 	fullPage.getSectionNames = function(){
 		var section = document.getElementsByTagName("section");
 		for (var i = 0; i < section.length ; i++){
@@ -33,7 +33,13 @@ fullPage.pagePosition = 0;
 	fullPage.buttonScroll = function(){
 	var links = document.getElementsByClassName("nextPage");
 		for (var i = 0 ; i < links.length ; i++){
-			$(links[i]).attr("href", "#" + fullPage.sectionNames[i + 1]);
+			if ((i + 1) < links.length){
+				$(links[i]).attr("href", "#" + fullPage.sectionNames[i + 1]);
+			} else {
+				// console.log("ah");
+				$(links[i]).attr("href", "#" + fullPage.sectionNames[0]);
+			}
+
 		}
 			console.log(links);
 	}
