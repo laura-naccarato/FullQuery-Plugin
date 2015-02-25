@@ -7,10 +7,14 @@
     box-sizing: border-box;
 }
 
-.down_arrow {
+.arrow {
 position: absolute;
 top: 85%;
 left: 45%;
+}
+.down_arrow:hover {
+
+
 }
 #section1{
 	position: relative;
