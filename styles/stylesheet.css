@@ -7,16 +7,24 @@
     box-sizing: border-box;
 }
 
-
+.down_arrow {
+position: absolute;
+top: 85%;
+left: 45%;
+}
 #section1{
+	position: relative;
 	background-color: #e74c3c;
 }
 #section2{
+	position: relative;
 	background-color: #e67e22;
 }
 #section3{
+	position: relative;
 	background-color: #3498db;
 }
 #section4{
+	position: relative;
 	background-color: #34495e;
 }
