@@ -13,27 +13,26 @@ top: 85%;
 left: 45%;
 }
 #section1, #section2, #section3, #section4{
-	text-align: center;
 	overflow: auto;
 	position: relative;
 }
 #section1{
-	background-color: #ecf0f1;
-	background-image: url("../images/section2background.jpg");
+	background-color: #e74c3c;
 }
 #section2{
-	background-color: #bdc3c7;
+	background-color: #e67e22;
+	background-image: url("../images/section2background.jpg");
 }
 #section3{
-	background-color: #95a5a6;
+	background-color: #3498db;
 }
 #section4{
-	background-color: #7f8c8d;
+	background-color: #34495e;
 }
-.section1Content, .section2Content, .section3Content, .section4Content {
-	padding: 2%;
-	border-radius: 1%;
-	margin: 10vh 30vw;
-	background: rgba(255,255,255, 0.7);
-	background-position: fixed;
+.section1Content {
+	text-align: center;
+	margin: 20vh 30vw;
+}
+.section2Content {
+	background: white;
 }

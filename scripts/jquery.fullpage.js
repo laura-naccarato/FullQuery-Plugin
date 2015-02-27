@@ -64,9 +64,13 @@ fullPage.maxPosition;
 			animate = function(){	
 					$('html, body').animate({scrollTop:$("#" + fullPage.sectionNames[fullPage.userPosition]).position().top}, 'slow');
 					}
-			 	if (e.keyCode === 40) {
+			 	if (e.keyCode === 40 || e.keyCode === 9 || e.keyCode === 34) {
 			 		console.log("userposition: " + fullPage.userPosition);
-			 			if ((fullPage.userPosition) >= fullPage.maxPosition) {
+			 			if (fullPage.UserPosition < 0 ) {
+			 				fullPage.userPosition = 0;
+			 				console.log("down arrow less than 0 usserpos: " + fullPage.userPosition);
+			 				// console.log("userpos: set to 0");
+			 			} else if ((fullPage.userPosition) >= fullPage.maxPosition) {
 			 				fullPage.userPosition = 0;
 			 				animate();
 			 				console.log("down arrow user position reached max userpos: set to 0");
@@ -76,12 +80,8 @@ fullPage.maxPosition;
 			 				animate();
 			 			}
 
-			 	} else if (e.keyCode === 38){
-			 			if (fullPage.UserPosition < 0 ) {
-			 				fullPage.userPosition = 0;
-			 				console.log("down arrow less than 0 usserpos: " + fullPage.userPosition);
-			 				// console.log("userpos: set to 0");
-			 			} else if (fullPage.userPosition > fullPage.maxPosition){
+			 	} else if (e.keyCode === 38 || e.keyCode === 33 ){
+						if (fullPage.userPosition > fullPage.maxPosition){
 			 				console.log("up arrow position greater")
 			 				fullPage.userPosition = 0;
 			 				animate();
