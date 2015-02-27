@@ -9,8 +9,8 @@
 
 .arrow {
 position: absolute;
-top: 85%;
 left: 45%;
+top: 83%;
 }
 #section1, #section2, #section3, #section4{
 	text-align: center;
@@ -31,9 +31,20 @@ left: 45%;
 	background-color: #7f8c8d;
 }
 .section1Content, .section2Content, .section3Content, .section4Content {
+	position: relative;
 	padding: 2%;
 	border-radius: 1%;
 	margin: 10vh 30vw;
 	background: rgba(255,255,255, 0.7);
 	background-position: fixed;
+}
+.animate{
+-webkit-animation: bounce 2s infinite;
+animation: bounce 2s infinite;
+	
+}
+@-webkit-keyframes bounce {
+    0%   {top: 83%;}
+    50%  {top: 86%;}
+    100% {top: 83%;}
 }

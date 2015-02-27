@@ -1,5 +1,15 @@
-$.fn.fullPage = function() {
+$.fn.fullPage = function(option) {
+var settings = $.extend({
+	animation: false,
+	upArrow: "images/up_arrow.svg",
+	downArrow: "images/up_arrow.svg",
+	animationSpeed: "slow"
+	}, option)
+	console.log(settings);
 var fullPage = {};
+fullPage.animate = function(){	
+	$('html, body').animate({scrollTop:$("#" + fullPage.sectionNames[fullPage.userPosition]).position().top}, settings.animationSpeed);
+}
 fullPage.sectionNames = [];
 fullPage.userPosition = 0;
 fullPage.maxPosition;
@@ -8,23 +18,17 @@ fullPage.maxPosition;
 		width: "100vw",
 		height: "100vh"
 	});
-	// console.log(fullPage.sectionNames);
-	//functionality that allows the user to navigate the page via keypress
 
+	fullPage.nextPageClick = function(){	
+		$('.nextPage').on("click", function(){
+			fullPage.userPosition++
 
-	$('.nextPage').click(function(){
-
-		fullPage.userPosition++
-		console.log("next page position: " + fullPage.userPosition);
-		// console.log(fullPage.UserPosition);
-		if (fullPage.userPosition > fullPage.maxPosition){
-			fullPage.userPosition = 0;
-		}
-	    $('html, body').animate({
-	        scrollTop: $( $.attr(this, 'href') ).offset().top
-	    }, 1000);
-	    return false;
-	});
+			if (fullPage.userPosition > fullPage.maxPosition){
+				fullPage.userPosition = 0;
+			}
+				fullPage.animate();
+		});
+	}
 	//This hides the scrollbar. Feel free to comment out if you would like the scrollbar to be present on your site
 	document.body.style.overflow = 'hidden';
 
@@ -41,13 +45,15 @@ fullPage.maxPosition;
 	//Any links on the page that have a class name of "next page" will be picked up. This function dynamically changes the HREF to link to the next anchor with the same class name.
 	fullPage.buttonScroll = function(){
 	var links = document.getElementsByClassName("nextPage");
-	var up_arrow = $("<img>").attr({src: "images/up_arrow.svg", class: "arrow"});
-	var down_arrow = $("<img>").attr({src: "images/down_arrow.svg", class: "arrow"});
+	var up_arrow = $("<img>").attr({src: settings.upArrow, class: "arrow"});
+	var down_arrow = $("<img>").attr({src: settings.downArrow, class: "arrow"});
+		
 		for (var i = 0 ; i < links.length ; i++){
+
 			if ((i + 1) < links.length){
 				$(links[i]).attr("href", "#" + fullPage.sectionNames[i + 1]).addClass("down_arrow");
 				$(".down_arrow").append(down_arrow);
- 				// fullPage.userPosition++
+ 				
 				
 
 			} else {
@@ -56,46 +62,44 @@ fullPage.maxPosition;
 				$(".up_arrow").append(up_arrow);
 				
 			}
-				// console.log(links[i]);
+			if (settings.animation === true){
+				$(".arrow").addClass("animate");
+			}	
 		}
 	}
 	fullPage.keyScroll = function(){
-			$(document).on("keydown", function(e) {
-			animate = function(){	
-					$('html, body').animate({scrollTop:$("#" + fullPage.sectionNames[fullPage.userPosition]).position().top}, 'slow');
-					}
-			 	if (e.keyCode === 40 || e.keyCode === 9 || e.keyCode === 34) {
-			 		console.log("userposition: " + fullPage.userPosition);
-			 			if (fullPage.UserPosition < 0 ) {
-			 				fullPage.userPosition = 0;
-			 				console.log("down arrow less than 0 usserpos: " + fullPage.userPosition);
-			 				// console.log("userpos: set to 0");
-			 			} else if ((fullPage.userPosition) >= fullPage.maxPosition) {
-			 				fullPage.userPosition = 0;
-			 				animate();
-			 				console.log("down arrow user position reached max userpos: set to 0");
-			 			} else {
-			 				console.log("down arrow else");
-			 				fullPage.userPosition++
-			 				animate();
-			 			}
+		$(document).on("keydown", function(e) {
+		 	if (e.keyCode === 40 || e.keyCode === 9 || e.keyCode === 34) {
+		 		console.log("userposition: " + fullPage.userPosition);
+	 			if (fullPage.UserPosition < 0 ) {
+	 				fullPage.userPosition = 0;
+	 				console.log("down arrow less than 0 usserpos: " + fullPage.userPosition);
+	 				// console.log("userpos: set to 0");
+	 			} else if ((fullPage.userPosition) >= fullPage.maxPosition) {
+	 				fullPage.userPosition = 0;
+	 				fullPage.animate();
+	 				console.log("down arrow user position reached max userpos: set to 0");
+	 			} else {
+	 				console.log("down arrow else");
+	 				fullPage.userPosition++
+	 				fullPage.animate();
+	 			}
 
-			 	} else if (e.keyCode === 38 || e.keyCode === 33 ){
-						if (fullPage.userPosition > fullPage.maxPosition){
-			 				console.log("up arrow position greater")
-			 				fullPage.userPosition = 0;
-			 				animate();
+		 	} else if (e.keyCode === 38 || e.keyCode === 33 ){
+				if (fullPage.userPosition > 0){
+	 				fullPage.userPosition--;
+	 				fullPage.animate();
 
-			 			} else {
-			 				fullPage.userPosition--;
-			 				animate();
-			 				// console.log("usserpos: " + fullPage.userPosition);
-			 			}
-
-			 	}
-	});
+	 			} else {
+	 				console.log("up arrow position greater")
+	 				fullPage.userPosition = 0;
+	 				fullPage.animate();
+	 			}
+		 	}
+		});
 	}
 	fullPage.getSectionNames();
 	fullPage.buttonScroll();
+	fullPage.nextPageClick();
 	fullPage.keyScroll();
 }
