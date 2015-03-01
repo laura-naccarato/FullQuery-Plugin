@@ -1,0 +1,15 @@
+.animate{
+-webkit-animation: bounce 2s infinite;
+animation: bounce 2s infinite;
+	
+}
+@-webkit-keyframes bounce {
+    0%   {top: 83%;}
+    50%  {top: 85%;}
+    100% {top: 83%;}
+}
+.arrow {
+position: absolute;
+left: 45%;
+top: 83%;
+}

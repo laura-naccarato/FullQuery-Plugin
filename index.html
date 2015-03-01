@@ -1,45 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="styles/fullquery.css">
 	<link rel="stylesheet" href="styles/stylesheet.css">
 	<meta charset="UTF-8">
-	<title>Full Page Demo</title>
+	<title>FullQuery</title>
 </head>
 <body>
 	<section id= "section1">
 		<a href="#" class ="nextPage"></a>
-		<div class="section1Content">
-		<h1>Full Page JQuery</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ipsa eum vero quia eveniet modi, quidem debitis voluptates voluptatum voluptatibus perspiciatis eius dolorum ex aspernatur accusamus, unde, dolor illum natus Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis delectus ex, aperiam aut neque accusamus debitis necessitatibus veniam quasi eligendi unde tempore vel, quisquam cum dolore, ea earum expedita molestias consequatur fugiat officiis, ut assumenda corporis nesciunt? Nisi, temporibus nobis id eos aut ipsum inventore laborum vero! Nemo molestiae facere impedit explicabo iste maiores et vero quam excepturi quisquam quas adipisci ea debitis assumenda aut rerum, quod delectus architecto magnam ab consectetur. Maxime, dolore, rerum aperiam voluptatibus velit facilis esse reprehenderit sed illum ullam, similique ipsam dolorem dolorum. Nemo culpa neque adipisci, aliquid iusto omnis ad dolorem. Totam, in ab?.</p>
-		<h2>Sub Heading</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci sunt cumque magni quisquam fugit sed est, illo impedit nisi laboriosam illum assumenda, saepe iure possimus accusamus tempora voluptatem? Optio, aliquid delectus adipisci deleniti facere labore architecto voluptas, aspernatur, pariatur voluptatem voluptates. Laborum reprehenderit excepturi tenetur voluptatibus quam, distinctio tempora reiciendis.</p>
+			<h1>FullQuery</h1>
+		<div class="innerContent">
+			<h2>What Is FullQuery?</h2>
+			<p>FullQuery is a Jquery plugin that will dynamically make your sections full screen, as well as creating buttons for scrolling to the next page. I created FullQuery because when I first began making HTML/CSS pages, I frequently wished for an easier way to accomplish full page websites, without needing to apply heights to every section/div. Now that I have learned the magic of JavaScript and Jquery, I have been able to create a simple solution that is very easy to implement.</p>
+			<h2>Setting up your HTML for FullQuery</h2>
+			<p>Fullquery requires every section to have an id applied to it in order to navigate correctly. The Id name does not matter, as long as it is there</p>
+			<code> &lt;section id= "section1"&gt;</code>
 		</div>
 	</section>
 	<section id= "section2">
 		<a href="#" class ="nextPage"></a>
-		<div class="section2Content">
-		<h1>Full Page JQuery</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ipsa eum vero quia eveniet modi, quidem debitis voluptates voluptatum voluptatibus perspiciatis eius dolorum ex aspernatur accusamus, unde, dolor illum natus Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis delectus ex, aperiam aut neque accusamus debitis necessitatibus veniam quasi eligendi unde tempore vel, quisquam cum dolore, ea earum expedita molestias consequatur fugiat officiis, ut assumenda corporis nesciunt? Nisi, temporibus nobis id eos aut ipsum inventore laborum vero! Nemo molestiae facere impedit explicabo iste maiores et vero quam excepturi quisquam quas adipisci ea debitis assumenda aut rerum, quod delectus architecto magnam ab consectetur. Maxime, dolore, rerum aperiam voluptatibus velit facilis esse reprehenderit sed illum ullam, similique ipsam dolorem dolorum. Nemo culpa neque adipisci, aliquid iusto omnis ad dolorem. Totam, in ab?.</p>
-		<h2>Sub Heading</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci sunt cumque magni quisquam fugit sed est, illo impedit nisi laboriosam illum assumenda, saepe iure possimus accusamus tempora voluptatem? Optio, aliquid delectus adipisci deleniti facere labore architecto voluptas, aspernatur, pariatur voluptatem voluptates. Laborum reprehenderit excepturi tenetur voluptatibus quam, distinctio tempora reiciendis.</p>
+		<div class="innerContent">
+			<h2>How to Use FullQuery</h2>
+			<p>To implement FullQuery in to your page, you will need to  link to the FullQueryplugin, as well as the supplied stylesheet.</p>
+			<p>To run FullQuery with the built in settings, simply add the following code to your main script file:</p>
+			<code>
+			$(function() {
+			$("section").fullPage();
+			});
+			</code>
+			<p>This will cause all sections within your HTML to be displayed as max VH and VW, as well as removing the scroll bar from the page</p>
+			<h2>Next Page Buttons</h2>
+			<p>To add navigational buttons to your site, you simply need to add one anchor link per page with a class of "nextPage" (Case sensitive)</p>
+			<code>
+			&lt;a href="#" class ="nextPage"&gt;&lt;/a&gt;
+			</code>
 		</div>
 	</section>
 	<section id= "section3">
 		<a href="#" class ="nextPage"></a>
-		<div class="section3Content">
-		<h1>Full Page JQuery</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ipsa eum vero quia eveniet modi, quidem debitis voluptates voluptatum voluptatibus perspiciatis eius dolorum ex aspernatur accusamus, unde, dolor illum natus Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis delectus ex, aperiam aut neque accusamus debitis necessitatibus veniam quasi eligendi unde tempore vel, quisquam cum dolore, ea earum expedita molestias consequatur fugiat officiis, ut assumenda corporis nesciunt? Nisi, temporibus nobis id eos aut ipsum inventore laborum vero! Nemo molestiae facere impedit explicabo iste maiores et vero quam excepturi quisquam quas adipisci ea debitis assumenda aut rerum, quod delectus architecto magnam ab consectetur. Maxime, dolore, rerum aperiam voluptatibus velit facilis esse reprehenderit sed illum ullam, similique ipsam dolorem dolorum. Nemo culpa neque adipisci, aliquid iusto omnis ad dolorem. Totam, in ab?.</p>
-		<h2>Sub Heading</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci sunt cumque magni quisquam fugit sed est, illo impedit nisi laboriosam illum assumenda, saepe iure possimus accusamus tempora voluptatem? Optio, aliquid delectus adipisci deleniti facere labore architecto voluptas, aspernatur, pariatur voluptatem voluptates. Laborum reprehenderit excepturi tenetur voluptatibus quam, distinctio tempora reiciendis.</p>
+		<div class="innerContent">
+			<h2>FullQuery Options</h2>
+			<p>You can also make some changes to the behaviour of FullQuery</p>
+			<p>You can decide whether the navigation buttons are animated by choosing true or false</p>
+			<code>animation: true</code>
+			<p>You can add your own custom up and down arrows.</p>
+			<code>upArrow: "images/down_arrow.svg", downArrow: "images/up_arrow.svg"</code>
+			<p>You can also control the speed at which the page scrolls</p>
+			<code>animationSpeed: "slow"</code>
 		</div>
 	</section>
 	<section id= "section4">
 		<a href="#" class ="nextPage"></a>
-		<div class="section4Content">
-		<h1>Full Page JQuery</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ipsa eum vero quia eveniet modi, quidem debitis voluptates voluptatum voluptatibus perspiciatis eius dolorum ex aspernatur accusamus, unde, dolor illum natus Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis delectus ex, aperiam aut neque accusamus debitis necessitatibus veniam quasi eligendi unde tempore vel, quisquam cum dolore, ea earum expedita molestias consequatur fugiat officiis, ut assumenda corporis nesciunt? Nisi, temporibus nobis id eos aut ipsum inventore laborum vero! Nemo molestiae facere impedit explicabo iste maiores et vero quam excepturi quisquam quas adipisci ea debitis assumenda aut rerum, quod delectus architecto magnam ab consectetur. Maxime, dolore, rerum aperiam voluptatibus velit facilis esse reprehenderit sed illum ullam, similique ipsam dolorem dolorum. Nemo culpa neque adipisci, aliquid iusto omnis ad dolorem. Totam, in ab?.</p>
-		<h2>Sub Heading</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci sunt cumque magni quisquam fugit sed est, illo impedit nisi laboriosam illum assumenda, saepe iure possimus accusamus tempora voluptatem? Optio, aliquid delectus adipisci deleniti facere labore architecto voluptas, aspernatur, pariatur voluptatem voluptates. Laborum reprehenderit excepturi tenetur voluptatibus quam, distinctio tempora reiciendis.</p>
+		<div class="innerContent">
+			<h2>Contact and Credits</h2>
+
 		</div>
 	</section>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
