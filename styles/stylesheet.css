@@ -10,6 +10,7 @@ body {
 	font-family: 'Roboto', sans-serif;
 }
 code {
+	border-radius: 2px;
 	color: #8e44ad;
 	padding: 5%;
 	display: block;
@@ -22,6 +23,16 @@ h1 {
 }
 h2 {
 	padding-bottom: 2%;
+}
+#section4 a {
+	text-decoration: none;
+	font-size: 20px;
+	display: relative;
+	color: black;
+
+}
+i {
+	padding: 5%;
 }
 #section1, #section2, #section3, #section4{
 	overflow: auto;

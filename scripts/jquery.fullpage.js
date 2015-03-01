@@ -3,7 +3,7 @@ $.fn.fullPage = function(option) {
 	var settings = $.extend({
 		animation: false,
 		upArrow: "images/up_arrow.svg",
-		downArrow: "images/up_arrow.svg",
+		downArrow: "images/down_arrow.svg",
 		animationSpeed: "slow"
 		}, option)
 		console.log(settings);
@@ -74,7 +74,7 @@ $.fn.fullPage = function(option) {
 	}
 	fullPage.keyScroll = function(){
 		$(document).on("keydown", function(e) {
-		 	if (e.keyCode === 40 || e.keyCode === 9 || e.keyCode === 34) {
+		 	if (e.keyCode === 40 || e.keyCode === 9 || e.keyCode === 34 || e.keyCode === 32) {
 		 		console.log("userposition: " + fullPage.userPosition);
 	 			if (fullPage.UserPosition < 0 ) {
 	 				fullPage.userPosition = 0;
