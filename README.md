@@ -50,4 +50,6 @@ You can also control the speed at which the page scrolls
 
 `animationSpeed: "slow"`
 
-## Contact and Credits
+##Credits
+
+Default Buttons are created by Bradley Wilton from the Noun Project

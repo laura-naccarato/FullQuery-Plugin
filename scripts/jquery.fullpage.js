@@ -15,6 +15,7 @@ $.fn.fullPage = function(option) {
 	fullPage.sectionNames = [];
 	fullPage.userPosition = 0;
 	fullPage.maxPosition;
+	fullPage.scrollTopLast = 0;
 	//"this" referring to the section name to be made max width/height
 	$(this).css({
 		width: "100vw",
@@ -44,9 +45,14 @@ $.fn.fullPage = function(option) {
 		}
 	}
 
-	// fullPage.scroll = function(){
-	// 	(window).on("scroll", "section", function(){
-	// 		$('html, body').animate({scrollTop:$("#" + fullPage.sectionNames[fullPage.userPosition]).position().top}, settings.animationSpeed);
+	// fullPage.scrollWheel = function(){
+	// 	$(window).on("scroll", function(){
+	// 		 var st = $(this).scrollTop();
+	// 		if (st > fullPage.scrollTopLast){
+	// 			fullPage.userPosition++
+	// 			fullPage.animate;
+	// 		}
+	// 		console.log(fullPage.userPosition);
 	// 	});
 	// }
 	
@@ -106,6 +112,6 @@ $.fn.fullPage = function(option) {
 	fullPage.getSectionNames();
 	fullPage.buttonScroll();
 	fullPage.nextPageClick();
-	// fullPage.scrollPage(	);
 	fullPage.keyScroll();
-}
+	// fullPage.scrollWheel();
+};
