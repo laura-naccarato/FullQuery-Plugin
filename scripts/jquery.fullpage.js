@@ -15,7 +15,6 @@ $.fn.fullPage = function(option) {
 	fullPage.sectionNames = [];
 	fullPage.userPosition = 0;
 	fullPage.maxPosition;
-	fullPage.scrollTopLast = 0;
 	//"this" referring to the section name to be made max width/height
 	$(this).css({
 		width: "100vw",
@@ -45,16 +44,6 @@ $.fn.fullPage = function(option) {
 		}
 	}
 
-	// fullPage.scrollWheel = function(){
-	// 	$(window).on("scroll", function(){
-	// 		 var st = $(this).scrollTop();
-	// 		if (st > fullPage.scrollTopLast){
-	// 			fullPage.userPosition++
-	// 			fullPage.animate;
-	// 		}
-	// 		console.log(fullPage.userPosition);
-	// 	});
-	// }
 	
 
 	//Any links on the page that have a class name of "next page" will be scanned. This function dynamically changes the HREF to link to the next 
@@ -78,6 +67,7 @@ $.fn.fullPage = function(option) {
 			}	
 		}
 	}
+	//This function is the logic for navigation with the keyboard. Up/down arrows move the page accordingly
 	fullPage.keyScroll = function(){
 		$(document).on("keydown", function(e) {
 		 	if (e.keyCode === 40 || e.keyCode === 9 || e.keyCode === 34 || e.keyCode === 32) {
@@ -109,9 +99,9 @@ $.fn.fullPage = function(option) {
 		 	}
 		});
 	}
+	
 	fullPage.getSectionNames();
 	fullPage.buttonScroll();
 	fullPage.nextPageClick();
 	fullPage.keyScroll();
-	// fullPage.scrollWheel();
 };

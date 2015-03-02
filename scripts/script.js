@@ -1,3 +1,3 @@
 $(function() {
-	$("section").fullPage();
+	$("section").fullPage(animation:true);
 });
